@@ -7,7 +7,7 @@ type: public
 encoding: UTF-8
 followredirect: false
 testlinktorrent: false
-requestDelay: 2
+requestDelay: 0
 links:
   - http://elfhosted-internal.knightcrawler
 caps:
