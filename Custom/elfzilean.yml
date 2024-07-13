@@ -1,14 +1,14 @@
-id: zilean
-name: Zilean
-description: "A custom indexer for Zilean the unofficial DMM indexer"
+id: elfzilean
+name: ElfZilean
+description: "A custom indexer for ElfHosted's instance of Zilean, the unofficial DMM indexer"
 language: en-US
 type: public
 encoding: UTF-8
 followredirect: false
 testlinktorrent: false
-requestDelay: 2
+requestDelay: 0
 links:
-  - http://zilean.zilean:8181
+  - http://elfhosted-internal.zilean
 
 caps:
   categories:

@@ -1,6 +1,6 @@
-id: comet
-name: Comet
-description: "A custom Prowlarr indexer for the Comet torrent/debrid search add-on."
+id: elfcomet
+name: ElfComet
+description: "A custom Prowlarr indexer for the Comet torrent/debrid search add-on, defaults to ElfHosted's instance"
 language: en-US
 type: public
 encoding: UTF-8
