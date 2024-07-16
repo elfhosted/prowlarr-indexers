@@ -10,6 +10,7 @@ requestDelay: 0
 links:
   - http://elfhosted-internal.comet
   - http://comet:8000
+  - https://comet.davyjones.media
 
 caps:
   categories:
@@ -60,12 +61,12 @@ search:
 
   fields:
     title:
-      selector: title
+      selector: torrentTitle
       filters:
         - name: split
           args: ["\n", 0]
     year:
-      selector: title
+      selector: torrentTitle
       filters:
         - name: regexp
           args: "(\\b(19|20)\\d{2}\\b)"
