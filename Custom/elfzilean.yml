@@ -78,8 +78,8 @@ search:
       filters:
         - name: regexp
           args: "\\b(2160p|1080p|720p|480p)\\b"
-    source:
-      selector: source
+    # source:
+    #   selector: source
     codec:
       selector: codec
     group:
