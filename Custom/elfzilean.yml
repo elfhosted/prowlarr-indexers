@@ -56,25 +56,25 @@ search:
 
   fields:
     title:
-      selector: rawTitle
+      selector: raw_title
     year:
-      selector: rawTitle
+      selector: raw_title
       filters:
         - name: regexp
           args: "(\\b(19|20)\\d{2}\\b)"
     category_is_tv_show:
-      selector: rawTitle
+      selector: raw_title
       filters:
         - name: regexp
           args: "\\b(S\\d+(?:E\\d+)?)\\b"
     category:
       text: "{{ if .Result.category_is_tv_show }}TV{{ else }}Movies{{ end }}"
     infohash:
-      selector: infoHash
+      selector: info_hash
     size:
       selector: size
     quality:
-      selector: rawTitle
+      selector: raw_title
       filters:
         - name: regexp
           args: "\\b(2160p|1080p|720p|480p)\\b"
