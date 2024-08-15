@@ -69,7 +69,7 @@ search:
           args: "\\b(S\\d+(?:E\\d+)?)\\b"
     category:
       text: "{{ if .Result.category_is_tv_show }}TV{{ else }}Movies{{ end }}"
-    infohash:
+    info_hash:
       selector: info_hash
     size:
       selector: size
