@@ -84,9 +84,9 @@ search:
       selector: codec
     # group:
     #   selector: group
-    episodes:
-      selector: episodes
-    seasons:
-      selector: seasons
-    languages:
-      selector: languages
+    episode:
+      selector: episode
+    season:
+      selector: season
+    language:
+      selector: language
