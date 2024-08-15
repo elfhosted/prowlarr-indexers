@@ -82,8 +82,8 @@ search:
     #   selector: source
     codec:
       selector: codec
-    group:
-      selector: group
+    # group:
+    #   selector: group
     episodes:
       selector: episodes
     seasons:
