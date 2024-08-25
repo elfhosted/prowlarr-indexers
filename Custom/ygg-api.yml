@@ -1,0 +1,78 @@
+---
+id: yggapi
+name: YGG Unofficial API
+description: "YggTorrent (YGG) is a FRENCH Private Torrent Tracker for MOVIES / TV / GENERAL"
+language: fr-FR
+type: private
+encoding: UTF-8
+requestDelay: 2
+links:
+  - https://yggapi.eu/
+
+caps:
+  categorymappings:
+    - {id: 2178, cat: Movies/Other, desc: "Film/Vidéo : Animation"}
+    - {id: 2179, cat: TV/Anime, desc: "Film/Vidéo : Animation Série"}
+    - {id: 2183, cat: Movies, desc: "Film/Vidéo : Film"}
+    - {id: 2184, cat: TV, desc: "Film/Vidéo : Série TV"}
+
+  modes:
+    search: [q]
+    tv-search: [q]
+    movie-search: [q]
+
+settings:
+  - name: passkey
+    type: text
+    label: Passkey
+  - name: sort
+    type: select
+    label: Sort requested from site
+    default: uploaded_at
+    options:
+      uploaded_at: publish_date
+      seed: seeders
+      downloads: downloads
+
+search:
+  paths:
+    - path: "/torrents"
+      response:
+        type: json
+
+  inputs:
+    q: "{{ .Keywords }}"
+
+  rows:
+    selector: $
+
+  fields:
+    _id:
+      selector: id
+    _slug:
+      selector: slug
+    category:
+      selector: category_id
+    title:
+      selector: title
+    download:
+      text: "{{ .Config.sitelink }}/torrent/{{ .Result._id }}/download?passkey={{ .Config.passkey }}"
+    seeders:
+      selector: seeders
+    leechers:
+      selector: leechers
+    grabs:
+      selector: downloads
+      optional: true
+      default: 0
+    date:
+      selector: uploaded_at
+      filters:
+        - name: append
+          args: " +00:00" # GMT
+        - name: dateparse
+          args: "MM/dd/yyyy HH:mm:ss zzz"
+    size:
+      selector: size
+    details:
+      text: "https://www.ygg.re/torrent/_/_/{{ .Result._id }}-{{ .Result._slug }}"
