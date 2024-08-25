@@ -7,7 +7,7 @@ type: private
 encoding: UTF-8
 requestDelay: 2
 links:
-  - https://yggapi.eu/
+  - https://yggapi.eu
 
 caps:
   categorymappings:
