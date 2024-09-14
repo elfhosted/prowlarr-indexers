@@ -42,7 +42,7 @@ search:
     - name: re_replace
       args: ["[\\[\\]()]", ""]  # Remove brackets
     - name: re_replace
-      args: ["^$", "limitless"]
+      args: ["^$", "serenity"]
 
   rows:
     selector: $
@@ -72,11 +72,11 @@ search:
     codec:
       selector: codec
     episode:
-      selector: episodes
+      selector: episode
     season:
-      selector: seasons
+      selector: season
     language:
-      selector: languages
+      selector: language
     seeders:
       text: "30"
     leechers:
