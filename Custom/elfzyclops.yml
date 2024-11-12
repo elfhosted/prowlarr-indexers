@@ -1,6 +1,6 @@
-id: elfzilean
-name: ElfZilean
-description: "A custom indexer for ElfHosted's instance of Zilean, the unofficial DMM indexer"
+id: elfzyclops
+name: ElfZyclops
+description: "Scapes hashes from ElfHosted users' RD accounts"
 language: en-US
 type: public
 encoding: UTF-8
