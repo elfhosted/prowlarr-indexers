@@ -30,8 +30,10 @@ search:
         type: json
 
   inputs:
-    $raw: "queryText={{ .Keywords }}"
-
+    $raw: "{{ if .Query.IMDBID }}ImdbId={{ .Query.IMDBID }}{{ else }}Query={{ .Keywords }}{{ end }}"
+    Season: "{{ if .Query.Season }}{{ .Query.Season }}{{ else }}{{ end }}"
+    Episode: "{{ if .Query.Ep }}{{ .Query.Ep }}{{ else }}{{ end }}"
+    
   keywordsfilters:
     - name: re_replace
       args: ["\\bS\\d+(?:E\\d+)?\\b", ""]  # Remove season and episode info
