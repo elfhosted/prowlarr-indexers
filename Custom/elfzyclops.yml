@@ -23,8 +23,6 @@ caps:
 settings: []
 
 search:
-  headers:
-    Content-Type: application/json
   paths:
     - path: /dmm/search # differs from zilean
       method: post
