@@ -25,7 +25,7 @@ settings: []
 search:
   paths:
     - path: /dmm/search # differs from zilean
-      method: get
+      method: post
       response:
         type: json
 
