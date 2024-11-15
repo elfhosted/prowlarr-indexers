@@ -33,12 +33,12 @@ search:
     queryText: "{{ .Keywords }}"
     
   keywordsfilters:
-    - name: re_replace
-      args: ["\\bS\\d+(?:E\\d+)?\\b", ""]  # Remove season and episode info
-    - name: re_replace
-      args: ["\\b(19|20)\\d{2}\\b", ""]  # Remove year info
-    - name: re_replace
-      args: ["[\\[\\]()]", ""]  # Remove brackets
+    # - name: re_replace
+    #   args: ["\\bS\\d+(?:E\\d+)?\\b", ""]  # Remove season and episode info
+    # - name: re_replace
+    #   args: ["\\b(19|20)\\d{2}\\b", ""]  # Remove year info
+    # - name: re_replace
+    #   args: ["[\\[\\]()]", ""]  # Remove brackets
     - name: re_replace
       args: ["^$", "limitless"]
 
