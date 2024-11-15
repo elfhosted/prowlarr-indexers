@@ -27,7 +27,7 @@ search:
     - path: /dmm/search # differs from zilean
       method: post
       response:
-        type: json
+        type: jsblahon
 
   inputs:
     queryText: "{{ .Keywords }}"
