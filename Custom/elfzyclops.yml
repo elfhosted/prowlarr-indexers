@@ -30,7 +30,7 @@ search:
         type: json
 
   inputs:
-    $raw: "queryText={{ .Keywords }}"
+    queryText: "{{ .Keywords }}"
     
   keywordsfilters:
     - name: re_replace
@@ -49,46 +49,7 @@ search:
   fields:
     title:
       selector: raw_title
-    year:
-      selector: year
-    category:
-      selector: category
-      filters:
-        - name: replace
-          args: ["tvSeries", "TV"]
-        - name: replace
-          args: ["movie", "Movies"]
     infohash:
       selector: info_hash
     size:
       selector: size
-    quality:
-      selector: resolution
-      filters:
-        - name: replace
-          args: ["4k", "2160p"]
-    codec:
-      selector: codec
-    episode:
-      selector: episodes
-    season:
-      selector: seasons
-    language:
-      selector: languages
-    seeders:
-      text: "30"
-    leechers:
-      text: "10"
-    date:
-      text: "Apr. 18th '11"
-      filters:
-        - name: re_replace
-          args: ["st|nd|rd|th", ""]
-        - name: replace
-          args: ["'", ""]
-        - name: dateparse
-          args: "MMM. d yy"
-    downloadvolumefactor:
-      text: "1"
-    uploadvolumefactor:
-      text: "1"
