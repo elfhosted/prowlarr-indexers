@@ -1,55 +1,13 @@
 id: elfzyclops
 name: ElfZyclops
-description: "Scapes hashes from ElfHosted users' RD accounts"
-language: en-US
-type: public
-encoding: UTF-8
-followredirect: false
-testlinktorrent: false
-requestDelay: 0
-links:
-  - http://elfhosted-internal.zyclops
-
+type: torznab
+url: http://elfhosted-internal.zilean/torznab
 caps:
+  search: true
   categories:
-    Movies: Movies
-    TV: TV
-  modes:
-    search: [q]
-    movie-search: [q, imdbid]
-    tv-search: [q, season, ep]
-  allowrawsearch: false
-
-settings: []
-
-search:
-  paths:
-    - path: /dmm/search # differs from zilean
-      method: post
-      response:
-        type: json
-
-  inputs:
-    queryText: "{{ .Keywords }}"
-    
-  keywordsfilters:
-    # - name: re_replace
-    #   args: ["\\bS\\d+(?:E\\d+)?\\b", ""]  # Remove season and episode info
-    # - name: re_replace
-    #   args: ["\\b(19|20)\\d{2}\\b", ""]  # Remove year info
-    # - name: re_replace
-    #   args: ["[\\[\\]()]", ""]  # Remove brackets
-    - name: re_replace
-      args: ["^$", "limitless"]
-
-  rows:
-    selector: $
-    missingAttributeEqualsNoResults: true
-
-  fields:
-    title:
-      selector: raw_title
-    infohash:
-      selector: info_hash
-    size:
-      selector: size
+    - id: 2000
+      name: Movies
+    - id: 3000
+      name: TV
+api:
+  path: /api
