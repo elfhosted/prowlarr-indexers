@@ -10,8 +10,7 @@ requestDelay: 0
 links:
   - http://elfhosted-internal.comet
   - http://comet:8000
-  - https://comet.davyjones.media
-  
+
 caps:
   categories:
     Movies: Movies
@@ -22,6 +21,10 @@ caps:
     tv-search: [q, imdbid, season, ep]
   allowrawsearch: false
 settings:
+  - name: info
+    type: info
+    label: Base64 config
+    default: "Complete your configuration and copy the generated link.<br/> Paste the link into your browser to find your code eg. http://host_ip:8000/base64_string/manifest.json."
   - name: b64config
     type: text
     label: Base64 Encoded Configuration
@@ -61,12 +64,12 @@ search:
 
   fields:
     title:
-      selector: torrentTitle
+      selector: description
       filters:
         - name: split
           args: ["\n", 0]
     year:
-      selector: torrentTitle
+      selector: description
       filters:
         - name: regexp
           args: "(\\b(19|20)\\d{2}\\b)"
@@ -81,12 +84,12 @@ search:
         - name: regexp
           args: "Torrentio"
     torrentio_size:
-      selector: title
+      selector: description
       filters:
         - name: regexp
           args: "\\b(\\d+(?:\\.\\d+)? [MG]B)\\b"
     torrent_size:
-      selector: torrentSize
+      selector: behaviorHints.videoSize
     category:
       text: "{{ if .Result.category_is_tv_show }}TV{{ else }}Movies{{ end }}"
     infohash:
