@@ -71,9 +71,9 @@ search:
         - name: split
           args: ["\n", 0]
         - name: replace
-          args: ["(.*)\.[^\.]+$", "$1"]  # Remove extension (everything after the last period)
+          args: ["(.*)\\.[^\\.]+$", "$1"]  # Remove extension (escaped periods)
         - name: replace
-          args: ["\.$", ""]  # Remove the last period          
+          args: ["\\.$", ""]  # Remove the last period (escaped backslash)
     year:
       selector: description
       filters:
