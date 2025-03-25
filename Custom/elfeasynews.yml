@@ -71,7 +71,7 @@ search:
         - name: split
           args: ["\n", 0]
         - name: replace
-          args: [/\.[^.]*$/, ""]
+          args: ['(\.[^.]+)$', '']
     year:
       selector: description
       filters:
