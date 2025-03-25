@@ -70,6 +70,8 @@ search:
       filters:
         - name: split
           args: ["\n", 0]
+        - name: regexp
+          args: ['(.*)\.[^.]+$', '\1']
     year:
       selector: description
       filters:
