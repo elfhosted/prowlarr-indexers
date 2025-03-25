@@ -70,6 +70,10 @@ search:
       filters:
         - name: split
           args: ["\n", 0]
+        - name: replace
+          args: ["(.*)\.[^\.]+$", "$1"]  # Remove extension (everything after the last period)
+        - name: replace
+          args: ["\.$", ""]  # Remove the last period          
     year:
       selector: description
       filters:
