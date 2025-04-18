@@ -1,5 +1,5 @@
 id: elfcomet
-name: ElfComet
+name: ElfComet (by PuksThePirate)
 description: "A custom Prowlarr indexer for the Comet torrent/debrid search add-on, defaults to ElfHosted's instance"
 language: en-US
 type: public
