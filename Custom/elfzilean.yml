@@ -1,6 +1,6 @@
 id: elfzilean-classic
 name: ElfZilean Classic
-description: "A custom indexer for ElfHosted's instance of Zilean, the unofficial DMM indexer"
+description: "ElfHosted Internal Zilean (based on Puks the Pirate's work)"
 language: en-US
 type: public
 encoding: UTF-8
